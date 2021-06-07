@@ -1,30 +1,35 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+  <HeaderMobileComponent />
+  <BodyComponent />
+  <ScrollTopComponent />
 </template>
 
+<script>
+import './assets/theme/plugins/global/plugins.bundle.css'
+import './assets/theme/plugins/custom/prismjs/prismjs.bundle.css'
+import './assets/theme/css/style.bundle.css'
+
+import './assets/theme/css/themes/layout/header/base/light.css'
+import './assets/theme/css/themes/layout/header/menu/light.css'
+import './assets/theme/css/themes/layout/brand/dark.css'
+import './assets/theme/css/themes/layout/aside/dark.css'
+
+import './assets/theme/plugins/global/plugins.bundle.js'
+import './assets/theme/plugins/custom/prismjs/prismjs.bundle.js'
+
+import HeaderMobileComponent from '@/components/layouts/HeaderMobileComponent'
+import BodyComponent from '@/components/layouts/BodyComponent'
+import ScrollTopComponent from '@/components/layouts/ScrollTopComponent'
+
+export default {
+  components: {
+    HeaderMobileComponent,
+    BodyComponent,
+    ScrollTopComponent,
+  },  
+}
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
 </style>
